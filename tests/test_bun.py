@@ -47,10 +47,5 @@ class TestBun:
     def test_get_price(self, name, price):
         """Тестирование метода get_price с разными ценами"""
         bun = Bun(name, price)
-        
-        assert bun.get_price() == price
-        # Мок для проверки вызова метода
-        mock_bun = Mock(spec=Bun)
-        mock_bun.get_price.return_value = price
-        assert mock_bun.get_price() == price
-        mock_bun.get_price.assert_called_once()
+        result = bun.get_price()
+        assert result == price
