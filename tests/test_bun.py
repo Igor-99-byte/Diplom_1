@@ -31,11 +31,6 @@ class TestBun:
         bun = Bun(name, price)
         
         assert bun.get_name() == name
-        # Мок для проверки вызова метода
-        mock_bun = Mock(spec=Bun)
-        mock_bun.get_name.return_value = name
-        assert mock_bun.get_name() == name
-        mock_bun.get_name.assert_called_once()
     
     @pytest.mark.parametrize("name,price", [
         ("Краторная булка N-200i", 1255),
